@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRAE - Proyecto Ambiental Escolar</title>
+  <style>
+    /* ----- ESTILOS GENERALES ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* ----- CARRUSEL ----- */
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: slide 30s infinite;
+    }
+
+    @keyframes slide {
+      0% {transform: translateX(0);}
+      20% {transform: translateX(0);}
+      25% {transform: translateX(-100%);}
+      45% {transform: translateX(-100%);}
+      50% {transform: translateX(-200%);}
+      70% {transform: translateX(-200%);}
+      75% {transform: translateX(-300%);}
+      95% {transform: translateX(-300%);}
+      100% {transform: translateX(0);}
+    }
+
+    .carousel-inner {
+      display: flex;
+      width: 400%;
+    }
+
+    /* ----- NAVBAR ----- */
+    nav {
+      background: #004d40;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #80cbc4;
+    }
+
+    /* ----- SECCIONES ----- */
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #004d40;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: #004d40;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    /* ----- RESPONSIVE ----- */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .carousel {
+        height: 40vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>PRAE I.E. San José del Citará</h1>
+    <ul>
+      <li><a href="#huerta">Huerta</a></li>
+      <li><a href="#compostaje">Compostaje</a></li>
+      <li><a href="#cafe">Café</a></li>
+      <li><a href="#reciclaje">Reciclaje</a></li>
+      <li><a href="#jabones">Jabones</a></li>
+      <li><a href="#apicultura">Apicultura</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="carousel">
+      <div class="carousel-inner">
+        <img src="huerta.jpg" alt="Huerta Escolar">
+        <img src="compostaje.jpg" alt="Compostaje">
+        <img src="cafetal.jpg" alt="Cultivo de Café">
+        <img src="jabones.jpg" alt="Fabricación de Jabones">
+        <img src="reciclaje.jpeg" alt="Reciclaje">
+        <img src="apicultura.jpg" alt="Apicultura">
+      </div>
+    </div>
+  </header>
+
+  <section id="huerta">
+    <h2>Huerta Escolar</h2>
+    <p>La huerta escolar promueve la soberanía alimentaria, el trabajo en equipo y el cuidado del suelo mediante prácticas sostenibles de siembra y cosecha.</p>
+    <div class="card-grid">
+      <div class="card">
+        <img src="huerta.jpg" alt="Huerta">
+        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="compostaje">
+    <h2>Compostaje</h2>
+    <p>Transformamos los residuos orgánicos en abono natural, cerrando el ciclo de los nutrientes y reduciendo los desechos del colegio.</p>
+    <div class="card-grid">
+      <div class="card">
+        <img src="compostaje.jpg" alt="Compostaje">
+        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cafe">
+    <h2>Cultivo de Café</h2>
+    <p>Fomentamos el conocimiento agrícola y la valoración de nuestro patrimonio caficultor a través del cultivo responsable del café.</p>
+    <div class="card-grid">
+      <div class="card">
+        <img src="cafetal.jpg" alt="Cultivo de café">
+        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reciclaje">
+    <h2>Reciclaje</h2>
+    <p>Promovemos la clasificación de residuos y la reutilización creativa de materiales para cuidar el entorno.</p>
+    <div class="card-grid">
+      <div class="card">
+        <img src="reciclaje.jpeg" alt="Cultivo de café">
+        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="jabones">
+    <h2>Fabricación de Jabones</h2>
+    <p>Elaboramos jabones artesanales con productos naturales, fomentando la economía circular y la creatividad estudiantil.</p>
+    <div class="card-grid">
+      <div class="card">
+        <img src="jabones.jpg" alt="Fabricación de Jabones">
+        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apicultura">
+    <h2>Apicultura (Próximamente)</h2>
+    <p>Pronto aprenderemos sobre el mundo de las abejas y su papel fundamental en la polinización y el equilibrio ecológico.</p>
+    <div class="card-grid">
+      <div class="card">
+        <img src="apicultura.jpg" alt="Cultivo de café">
+        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Proyecto PRAE - Institución Educativa San José del Citará | Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
