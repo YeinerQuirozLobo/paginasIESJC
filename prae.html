@@ -15,34 +15,50 @@
     }
 
     body {
-      background-color: #f5f9f6;
-      color: #333;
+      background: linear-gradient(135deg, #e8f0ff, #fff8e1);
+      color: #111;
       overflow-x: hidden;
     }
 
     /* ====== NAVBAR ====== */
     nav {
-      background: #00695c;
+      background: linear-gradient(90deg, #002855, #ffc107, #000);
       color: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 0.8rem 2rem;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav img {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      background-color: white;
+      object-fit: cover;
     }
 
     nav h1 {
       font-weight: 600;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1rem;
+      gap: 0.7rem;
+      flex-wrap: wrap;
     }
 
     nav ul li a {
@@ -55,7 +71,7 @@
     }
 
     nav ul li a:hover {
-      background: #26a69a;
+      background: rgba(255, 255, 255, 0.2);
     }
 
     /* ====== CARRUSEL ====== */
@@ -67,23 +83,23 @@
 
     .carousel {
       width: 100%;
-      height: 65vh;
-      position: relative;
+      height: 70vh;
       display: flex;
       overflow: hidden;
+      position: relative;
     }
 
     .carousel-inner {
       display: flex;
       width: 600%;
-      animation: slide 30s infinite;
+      animation: slide 35s infinite;
     }
 
     .carousel img {
       width: 100%;
-      height: 65vh;
-      object-fit: cover;
-      filter: brightness(80%);
+      height: 70vh;
+      object-fit: contain; /* 🔹 mantiene imagen completa */
+      background-color: #000;
     }
 
     @keyframes slide {
@@ -105,7 +121,7 @@
 
     section h2 {
       font-size: 2rem;
-      color: #004d40;
+      color: #002855;
       margin-bottom: 1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -115,7 +131,7 @@
       font-size: 1.05rem;
       line-height: 1.6;
       margin-bottom: 2rem;
-      color: #444;
+      color: #333;
     }
 
     /* ====== TARJETAS ====== */
@@ -126,16 +142,18 @@
     }
 
     .card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       overflow: hidden;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     }
 
     .card img {
@@ -145,7 +163,7 @@
     }
 
     .card h3 {
-      color: #00796b;
+      color: #002855;
       margin: 1rem 0 0.5rem;
       font-size: 1.2rem;
     }
@@ -153,12 +171,12 @@
     .card p {
       font-size: 0.95rem;
       padding: 0 1rem 1.5rem;
-      color: #555;
+      color: #222;
     }
 
     /* ====== FOOTER ====== */
     footer {
-      background: #004d40;
+      background: linear-gradient(90deg, #000, #002855);
       color: #fff;
       text-align: center;
       padding: 2rem 1rem;
@@ -171,9 +189,8 @@
 
     /* ====== RESPONSIVE ====== */
     @media (max-width: 768px) {
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+      nav {
+        flex-direction: column;
       }
 
       .carousel {
@@ -188,8 +205,12 @@
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
-    <h1>PRAE - I.E. San José del Citará</h1>
+    <div class="logo-container">
+      <img src="iesjc.png" alt="Logo IESJC">
+      <h1>PRAE - I.E. San José del Citará</h1>
+    </div>
     <ul>
       <li><a href="#huerta">Huerta</a></li>
       <li><a href="#compostaje">Compostaje</a></li>
@@ -200,20 +221,21 @@
     </ul>
   </nav>
 
+  <!-- CARRUSEL -->
   <header>
     <div class="carousel">
       <div class="carousel-inner">
         <img src="huerta.jpg" alt="Huerta Escolar">
         <img src="compostaje.jpg" alt="Compostaje">
         <img src="cafetal.jpg" alt="Cultivo de Café">
-        <img src="1.jpeg" alt="Reciclaje">
+        <img src="reciclaje.jpeg" alt="Reciclaje">
         <img src="jabones.jpg" alt="Jabones Artesanales">
-        <img src="2.jpg" alt="Apicultura">
+        <img src="apicultura.jpg" alt="Apicultura">
       </div>
     </div>
   </header>
 
-  <!-- HUERTA -->
+  <!-- SECCIONES -->
   <section id="huerta">
     <h2>Huerta Escolar</h2>
     <p>Promovemos la agricultura sostenible y el trabajo colaborativo, conectando a los estudiantes con la tierra y la producción limpia de alimentos saludables.</p>
@@ -231,7 +253,6 @@
     </div>
   </section>
 
-  <!-- COMPOSTAJE -->
   <section id="compostaje">
     <h2>Compostaje</h2>
     <p>Transformamos los residuos orgánicos del comedor y la huerta en abono natural, cerrando el ciclo de la materia y promoviendo el aprovechamiento de los desechos.</p>
@@ -249,7 +270,6 @@
     </div>
   </section>
 
-  <!-- CAFÉ -->
   <section id="cafe">
     <h2>Cultivo de Café</h2>
     <p>Rescatamos el valor del café como símbolo de nuestra identidad cultural y agrícola, promoviendo su cultivo responsable y sostenible.</p>
@@ -267,7 +287,6 @@
     </div>
   </section>
 
-  <!-- RECICLAJE -->
   <section id="reciclaje">
     <h2>Reciclaje</h2>
     <p>Educamos en la clasificación y reutilización de residuos, impulsando una cultura ecológica que disminuye la contaminación en la institución.</p>
@@ -285,7 +304,6 @@
     </div>
   </section>
 
-  <!-- JABONES -->
   <section id="jabones">
     <h2>Jabones Artesanales</h2>
     <p>Elaboramos jabones ecológicos con aceites naturales y aromas del entorno, promoviendo la economía circular y el emprendimiento estudiantil.</p>
@@ -303,7 +321,6 @@
     </div>
   </section>
 
-  <!-- APICULTURA -->
   <section id="apicultura">
     <h2>Apicultura (Próximamente)</h2>
     <p>Exploraremos el fascinante mundo de las abejas, comprendiendo su papel vital en la polinización y la biodiversidad.</p>
