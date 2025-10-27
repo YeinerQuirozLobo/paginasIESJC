@@ -22,7 +22,6 @@
       position: relative;
     }
 
-    /* Capa de desenfoque y brillo (efecto liquid glass) */
     .glass {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
@@ -31,7 +30,6 @@
       box-shadow: 0 4px 30px rgba(0,0,0,0.1);
     }
 
-    /* ====== NAVBAR ====== */
     nav {
       background: rgba(0, 0, 0, 0.6);
       display: flex;
@@ -42,7 +40,7 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(10px);
-      border-bottom: 3px solid #FFD700; /* amarillo institucional */
+      border-bottom: 3px solid #FFD700;
     }
 
     nav img {
@@ -75,10 +73,9 @@
     }
 
     nav ul li a:hover {
-      background: #003366; /* azul oscuro institucional */
+      background: #003366;
     }
 
-    /* ====== CARRUSEL (solo una imagen visible a la vez) ====== */
     header {
       position: relative;
       width: 100%;
@@ -105,7 +102,6 @@
       opacity: 1;
     }
 
-    /* ====== SECCIONES ====== */
     section {
       padding: 3rem 2rem;
       max-width: 1100px;
@@ -130,7 +126,6 @@
       color: #f0f0f0;
     }
 
-    /* ====== TARJETAS ====== */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -168,7 +163,6 @@
       color: #eee;
     }
 
-    /* ====== FOOTER ====== */
     footer {
       background: rgba(0, 0, 0, 0.8);
       color: #fff;
@@ -182,7 +176,6 @@
       font-size: 0.95rem;
     }
 
-    /* ====== CALENDARIO ====== */
     .calendar-container {
       display: flex;
       justify-content: center;
@@ -200,7 +193,22 @@
       margin-top: 1rem;
     }
 
-    /* ====== RESPONSIVE ====== */
+    #fechasAmbientales {
+      list-style: none;
+      padding: 0;
+      margin-top: 2rem;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #fechasAmbientales li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      font-size: 1rem;
+    }
+
     @media (max-width: 768px) {
       nav ul {
         flex-wrap: wrap;
@@ -239,11 +247,10 @@
     <div class="carousel">
       <img src="2.jpg" alt="x" class="active">
       <img src="1.jpg" alt="x">
-      <img src="3.jpeg" alt="x">
+      <img src="3.jpg" alt="x">
     </div>
   </header>
 
-  <!-- OBJETIVO PRAE -->
   <section id="objetivo" class="glass">
     <h2>Objetivo del PRAE</h2>
     <p>
@@ -257,11 +264,46 @@
   <section id="calendario" class="glass">
     <h2>Calendario Ambiental</h2>
     <div class="calendar-container">
-      <iframe src="https://calendar.google.com/calendar/embed?src=es.colombian%23holiday%40group.v.calendar.google.com&ctz=America%2FBogota"></iframe>
+      <iframe src="https://calendar.google.com/calendar/embed?src=c_80b4d8a8073edb1ff0a2b3d26bdb6c85f8e94a3ee1f6e5dcb3f8ab54b5d6a7b2%40group.calendar.google.com&ctz=America%2FBogota"></iframe>
+
+      <!-- Fechas Ambientales -->
+      <ul id="fechasAmbientales" class="glass">
+        <!-- Se rellena dinámicamente -->
+      </ul>
     </div>
+
+    <script>
+      const fechas = [
+        { fecha: "26 de enero", evento: "🌱 Día Mundial de la Educación Ambiental" },
+        { fecha: "2 de febrero", evento: "💧 Día Mundial de los Humedales" },
+        { fecha: "21 de marzo", evento: "🌳 Día Internacional de los Bosques" },
+        { fecha: "22 de marzo", evento: "💦 Día Mundial del Agua" },
+        { fecha: "7 de abril", evento: "🌍 Día Mundial de la Salud" },
+        { fecha: "22 de abril", evento: "🌎 Día Internacional de la Madre Tierra" },
+        { fecha: "17 de mayo", evento: "♻️ Día Mundial del Reciclaje" },
+        { fecha: "5 de junio", evento: "🌿 Día Mundial del Medio Ambiente" },
+        { fecha: "8 de junio", evento: "🐠 Día Mundial de los Océanos" },
+        { fecha: "28 de julio", evento: "🌾 Día Mundial de la Naturaleza" },
+        { fecha: "9 de agosto", evento: "🪶 Día Internacional de las Poblaciones Indígenas" },
+        { fecha: "16 de septiembre", evento: "☀️ Día de la Preservación de la Capa de Ozono" },
+        { fecha: "4 de octubre", evento: "🐝 Día Mundial de los Animales" },
+        { fecha: "12 de octubre", evento: "🌲 Día del Árbol" },
+        { fecha: "6 de noviembre", evento: "🔥 Día para la Prevención de la Explotación del Medio Ambiente en la Guerra" },
+        { fecha: "11 de diciembre", evento: "🏔️ Día Internacional de las Montañas" }
+      ];
+
+      const lista = document.getElementById("fechasAmbientales");
+      fechas.forEach(f => {
+        const li = document.createElement("li");
+        li.innerHTML = `<strong style="color:#00BFFF;">${f.fecha}</strong>: ${f.evento}`;
+        lista.appendChild(li);
+      });
+    </script>
   </section>
 
-  <!-- HUERTA -->
+  <!-- (Sección Huerta y demás continúan igual que tu versión) -->
+  <!-- ... resto del código idéntico ... -->
+
   <section id="huerta" class="glass">
     <h2>Huerta Escolar</h2>
     <p>Promovemos la agricultura sostenible y el trabajo colaborativo, conectando a los estudiantes con la tierra y la producción limpia de alimentos saludables.</p>
@@ -279,7 +321,6 @@
     </div>
   </section>
 
-  <!-- COMPOSTAJE -->
   <section id="compostaje" class="glass">
     <h2>Compostaje</h2>
     <p>Transformamos los residuos orgánicos del comedor y la huerta en abono natural, promoviendo el aprovechamiento de los desechos.</p>
@@ -297,7 +338,6 @@
     </div>
   </section>
 
-  <!-- CAFÉ -->
   <section id="cafe" class="glass">
     <h2>Cultivo de Café</h2>
     <p>Rescatamos el valor del café como símbolo de identidad cultural y agrícola, promoviendo su cultivo sostenible.</p>
@@ -315,7 +355,6 @@
     </div>
   </section>
 
-  <!-- RECICLAJE -->
   <section id="reciclaje" class="glass">
     <h2>Reciclaje</h2>
     <p>Educamos en la clasificación y reutilización de residuos, fomentando una cultura ecológica escolar.</p>
@@ -333,7 +372,6 @@
     </div>
   </section>
 
-  <!-- JABONES -->
   <section id="jabones" class="glass">
     <h2>Jabones Artesanales</h2>
     <p>Elaboramos jabones ecológicos con aceites naturales y aromas del entorno, promoviendo el emprendimiento estudiantil.</p>
@@ -351,7 +389,6 @@
     </div>
   </section>
 
-  <!-- APICULTURA -->
   <section id="apicultura" class="glass">
     <h2>Apicultura (Próximamente)</h2>
     <p>Exploraremos el fascinante mundo de las abejas, comprendiendo su papel vital en la polinización y la biodiversidad.</p>
@@ -369,16 +406,13 @@
   </footer>
 
   <script>
-    // ====== Script para el carrusel de una imagen ======
     const images = document.querySelectorAll('.carousel img');
     let index = 0;
-
     setInterval(() => {
       images[index].classList.remove('active');
       index = (index + 1) % images.length;
       images[index].classList.add('active');
     }, 5000);
   </script>
-
 </body>
 </html>
