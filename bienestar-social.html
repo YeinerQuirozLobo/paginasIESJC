@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRAE - Proyecto Ambiental Escolar</title>
+  <title>Proyecto de Bienestar Social - IESJC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* ----- ESTILOS GENERALES ----- */
+    /* ====== ESTILOS GENERALES ====== */
     * {
       margin: 0;
       padding: 0;
@@ -14,53 +15,23 @@
     }
 
     body {
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    /* ----- CARRUSEL ----- */
-    .carousel {
-      position: relative;
-      width: 100%;
-      height: 60vh;
-      display: flex;
-      overflow: hidden;
-    }
-
-    .carousel img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      animation: slide 30s infinite;
-    }
-
-    @keyframes slide {
-      0% {transform: translateX(0);}
-      20% {transform: translateX(0);}
-      25% {transform: translateX(-100%);}
-      45% {transform: translateX(-100%);}
-      50% {transform: translateX(-200%);}
-      70% {transform: translateX(-200%);}
-      75% {transform: translateX(-300%);}
-      95% {transform: translateX(-300%);}
-      100% {transform: translateX(0);}
-    }
-
-    .carousel-inner {
-      display: flex;
-      width: 400%;
-    }
-
-    /* ----- NAVBAR ----- */
-    nav {
-      background: #004d40;
+      background: url("prueba.jpeg") no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.6);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -68,11 +39,22 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      backdrop-filter: blur(10px);
+      border-bottom: 3px solid #FFD700;
+    }
+
+    nav img {
+      height: 50px;
+      margin-right: 10px;
     }
 
     nav h1 {
-      font-size: 1.5rem;
-      letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #FFD700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     nav ul {
@@ -85,88 +67,172 @@
       color: #fff;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
 
     nav ul li a:hover {
-      color: #80cbc4;
+      background: #003366;
     }
 
-    /* ----- SECCIONES ----- */
+    header {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .carousel {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .carousel img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+    }
+
     section {
       padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
+      max-width: 1100px;
+      margin: 2rem auto;
       text-align: center;
+      color: #fff;
     }
 
     section h2 {
       font-size: 2rem;
-      color: #004d40;
+      color: #FFD700;
       margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 8px #000;
     }
 
     section p {
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.6;
       margin-bottom: 2rem;
+      color: #f0f0f0;
     }
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
 
     .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      transition: transform 0.3s;
+      padding-bottom: 1rem;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     }
 
     .card img {
       width: 100%;
-      border-radius: 10px;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
-      margin-bottom: 1rem;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+
+    .card h3 {
+      color: #00BFFF;
+      margin: 1rem 0 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      padding: 0 1rem 1rem;
+      color: #eee;
     }
 
     footer {
-      background: #004d40;
+      background: rgba(0, 0, 0, 0.8);
       color: #fff;
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      border-top: 3px solid #FFD700;
     }
 
     footer p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
-    /* ----- RESPONSIVE ----- */
+    .calendar-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 2rem;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      max-width: 900px;
+      height: 600px;
+      border-radius: 16px;
+      margin-top: 1rem;
+    }
+
+    #fechasAmbientales {
+      list-style: none;
+      padding: 0;
+      margin-top: 2rem;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #fechasAmbientales li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      font-size: 1rem;
+    }
+
     @media (max-width: 768px) {
       nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
-      .carousel {
-        height: 40vh;
+      header {
+        height: 55vh;
+      }
+
+      .carousel img {
+        height: 55vh;
+      }
+
+      iframe {
+        height: 500px;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <h1>PRAE I.E. San José del Citará</h1>
+  <nav class="glass">
+    <h1><img src="iesjc.png" alt="Logo Colegio"> I.E. San José del Citará</h1>
     <ul>
       <li><a href="#huerta">Huerta</a></li>
       <li><a href="#compostaje">Compostaje</a></li>
@@ -179,86 +245,170 @@
 
   <header>
     <div class="carousel">
-      <div class="carousel-inner">
-        <img src="huerta.jpg" alt="Huerta Escolar">
-        <img src="compostaje.jpg" alt="Compostaje">
-        <img src="cafetal.jpg" alt="Cultivo de Café">
-        <img src="jabones.jpg" alt="Fabricación de Jabones">
-        <img src="reciclaje.jpeg" alt="Reciclaje">
-        <img src="apicultura.jpg" alt="Apicultura">
-      </div>
+      <img src="pastoral2.jpeg" alt="x" class="active">
+      <img src="pastoral1.jpeg" alt="x">
+      <img src="pastoral3.jpg" alt="x">
     </div>
   </header>
 
-  <section id="huerta">
+  <section id="objetivo" class="glass">
+    <h2>Objetivo del Proyecto de Bienestar Social</h2>
+    <p>
+Promover el bienestar integral de la comunidad educativa a través de acciones formativas, solidarias y pastorales que fortalezcan la empatía, la sana convivencia, la espiritualidad y el compromiso social, contribuyendo a la construcción de una cultura de paz y solidaridad en el entorno escolar.
+    </p>
+  </section>
+
+  <!-- CALENDARIO DE ACTIVIDADES -->
+  <section id="calendario" class="glass">
+    <h2>Calendario de actividades</h2>
+    <div class="calendar-container">
+      <iframe src="https://calendar.google.com/calendar/embed?src=c_80b4d8a8073edb1ff0a2b3d26bdb6c85f8e94a3ee1f6e5dcb3f8ab54b5d6a7b2%40group.calendar.google.com&ctz=America%2FBogota"></iframe>
+
+      <!-- Fechas Ambientales -->
+      <ul id="fechasAmbientales" class="glass">
+        <!-- Se rellena dinámicamente -->
+      </ul>
+    </div>
+
+    <script>
+      const fechas = [
+        { fecha: "26 de enero", evento: "🌱 Día Mundial de la Educación Ambiental" },
+        { fecha: "2 de febrero", evento: "💧 Día Mundial de los Humedales" },
+        { fecha: "21 de marzo", evento: "🌳 Día Internacional de los Bosques" },
+        { fecha: "22 de marzo", evento: "💦 Día Mundial del Agua" },
+        { fecha: "7 de abril", evento: "🌍 Día Mundial de la Salud" },
+        { fecha: "22 de abril", evento: "🌎 Día Internacional de la Madre Tierra" },
+        { fecha: "17 de mayo", evento: "♻️ Día Mundial del Reciclaje" },
+        { fecha: "5 de junio", evento: "🌿 Día Mundial del Medio Ambiente" },
+        { fecha: "8 de junio", evento: "🐠 Día Mundial de los Océanos" },
+        { fecha: "28 de julio", evento: "🌾 Día Mundial de la Naturaleza" },
+        { fecha: "9 de agosto", evento: "🪶 Día Internacional de las Poblaciones Indígenas" },
+        { fecha: "16 de septiembre", evento: "☀️ Día de la Preservación de la Capa de Ozono" },
+        { fecha: "4 de octubre", evento: "🐝 Día Mundial de los Animales" },
+        { fecha: "12 de octubre", evento: "🌲 Día del Árbol" },
+        { fecha: "6 de noviembre", evento: "🔥 Día para la Prevención de la Explotación del Medio Ambiente en la Guerra" },
+        { fecha: "11 de diciembre", evento: "🏔️ Día Internacional de las Montañas" }
+      ];
+
+      const lista = document.getElementById("fechasAmbientales");
+      fechas.forEach(f => {
+        const li = document.createElement("li");
+        li.innerHTML = `<strong style="color:#00BFFF;">${f.fecha}</strong>: ${f.evento}`;
+        lista.appendChild(li);
+      });
+    </script>
+  </section>
+
+
+  <section id="huerta" class="glass">
     <h2>Huerta Escolar</h2>
-    <p>La huerta escolar promueve la soberanía alimentaria, el trabajo en equipo y el cuidado del suelo mediante prácticas sostenibles de siembra y cosecha.</p>
+    <p>Promovemos la agricultura sostenible y el trabajo colaborativo, conectando a los estudiantes con la tierra y la producción limpia de alimentos saludables.</p>
     <div class="card-grid">
-      <div class="card">
-        <img src="huerta.jpg" alt="Huerta">
-        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+      <div class="card glass">
+        <img src="huerta.jpg" alt="Huerta escolar">
+        <h3>Aprender sembrando</h3>
+        <p>Los estudiantes cultivan hortalizas aplicando técnicas agroecológicas que fortalecen el respeto por el medio ambiente.</p>
+      </div>
+      <div class="card glass">
+        <img src="siembra.jpg" alt="Jornada de siembra">
+        <h3>Trabajo en comunidad</h3>
+        <p>La huerta fomenta valores de cooperación y conciencia ambiental en cada jornada de siembra y cosecha.</p>
       </div>
     </div>
   </section>
 
-  <section id="compostaje">
+  <section id="compostaje" class="glass">
     <h2>Compostaje</h2>
-    <p>Transformamos los residuos orgánicos en abono natural, cerrando el ciclo de los nutrientes y reduciendo los desechos del colegio.</p>
+    <p>Transformamos los residuos orgánicos del comedor y la huerta en abono natural, promoviendo el aprovechamiento de los desechos.</p>
     <div class="card-grid">
-      <div class="card">
+      <div class="card glass">
         <img src="compostaje.jpg" alt="Compostaje">
-        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+        <h3>Abono ecológico</h3>
+        <p>El compost generado se utiliza en la huerta, mejorando la fertilidad del suelo y reduciendo residuos.</p>
+      </div>
+      <div class="card glass">
+        <img src="compostaje2.jpg" alt="Lombricultura">
+        <h3>Lombricultura</h3>
+        <p>Usamos lombrices rojas californianas para optimizar la descomposición y crear humus rico en nutrientes.</p>
       </div>
     </div>
   </section>
 
-  <section id="cafe">
+  <section id="cafe" class="glass">
     <h2>Cultivo de Café</h2>
-    <p>Fomentamos el conocimiento agrícola y la valoración de nuestro patrimonio caficultor a través del cultivo responsable del café.</p>
+    <p>Rescatamos el valor del café como símbolo de identidad cultural y agrícola, promoviendo su cultivo sostenible.</p>
     <div class="card-grid">
-      <div class="card">
+      <div class="card glass">
         <img src="cafetal.jpg" alt="Cultivo de café">
-        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+        <h3>Semillas con historia</h3>
+        <p>Los estudiantes conocen las etapas del cultivo del café y aplican prácticas sostenibles.</p>
+      </div>
+      <div class="card glass">
+        <img src="cafe.jpg" alt="Secado del café">
+        <h3>Valor agregado</h3>
+        <p>Exploramos procesos de tostado y empaque escolar como forma de emprendimiento local.</p>
       </div>
     </div>
   </section>
 
-  <section id="reciclaje">
+  <section id="reciclaje" class="glass">
     <h2>Reciclaje</h2>
-    <p>Promovemos la clasificación de residuos y la reutilización creativa de materiales para cuidar el entorno.</p>
+    <p>Educamos en la clasificación y reutilización de residuos, fomentando una cultura ecológica escolar.</p>
     <div class="card-grid">
-      <div class="card">
-        <img src="reciclaje.jpeg" alt="Cultivo de café">
-        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+      <div class="card glass">
+        <img src="reciclaje.jpeg" alt="Clasificación de residuos">
+        <h3>Separar para cuidar</h3>
+        <p>Los estudiantes aprenden a clasificar materiales mediante actividades lúdicas y creativas.</p>
+      </div>
+      <div class="card glass">
+        <img src="arte-reciclado.jpg" alt="Arte con reciclaje">
+        <h3>Creatividad verde</h3>
+        <p>Con materiales reutilizados elaboran obras y objetos útiles, mostrando que reciclar también es crear.</p>
       </div>
     </div>
   </section>
 
-  <section id="jabones">
-    <h2>Fabricación de Jabones</h2>
-    <p>Elaboramos jabones artesanales con productos naturales, fomentando la economía circular y la creatividad estudiantil.</p>
+  <section id="jabones" class="glass">
+    <h2>Jabones Artesanales</h2>
+    <p>Elaboramos jabones ecológicos con aceites naturales y aromas del entorno, promoviendo el emprendimiento estudiantil.</p>
     <div class="card-grid">
-      <div class="card">
-        <img src="jabones.jpg" alt="Fabricación de Jabones">
-        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+      <div class="card glass">
+        <img src="jabones.jpg" alt="Jabones ecológicos">
+        <h3>Productos sostenibles</h3>
+        <p>Aprendemos a fabricar jabones biodegradables que cuidan la piel y el medio ambiente.</p>
+      </div>
+      <div class="card glass">
+        <img src="ventas.jpg" alt="Emprendimiento escolar">
+        <h3>Emprendimiento verde</h3>
+        <p>Los productos elaborados se exhiben en ferias escolares, fortaleciendo la autogestión.</p>
       </div>
     </div>
   </section>
 
-  <section id="apicultura">
+  <section id="apicultura" class="glass">
     <h2>Apicultura (Próximamente)</h2>
-    <p>Pronto aprenderemos sobre el mundo de las abejas y su papel fundamental en la polinización y el equilibrio ecológico.</p>
+    <p>Exploraremos el fascinante mundo de las abejas, comprendiendo su papel vital en la polinización y la biodiversidad.</p>
     <div class="card-grid">
-      <div class="card">
-        <img src="apicultura.jpg" alt="Cultivo de café">
-        <p>Aprendemos a sembrar con amor y respeto por la tierra.</p>
+      <div class="card glass">
+        <img src="apicultura.jpg" alt="Colmenas">
+        <h3>Guardianes de la naturaleza</h3>
+        <p>Aprenderemos sobre la importancia de las abejas y los cuidados para mantener su equilibrio ecológico.</p>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Proyecto PRAE - Institución Educativa San José del Citará | Todos los derechos reservados.</p>
+    <p>© 2025 Proyecto de Bienestar Social - Institución Educativa San José del Citará | Todos los derechos reservados.</p>
   </footer>
 
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    let index = 0;
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 5000);
+  </script>
 </body>
 </html>
