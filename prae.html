@@ -184,13 +184,14 @@
       margin-top: 2rem;
     }
 
-    iframe {
-      border: none;
+    .calendar-img {
       width: 100%;
       max-width: 900px;
-      height: 600px;
+      height: auto;
       border-radius: 16px;
       margin-top: 1rem;
+      border: 2px solid rgba(255,255,255,0.4);
+      object-fit: cover;
     }
 
     #fechasAmbientales {
@@ -223,8 +224,9 @@
         height: 55vh;
       }
 
-      iframe {
-        height: 500px;
+      .calendar-img {
+        max-width: 100%;
+        height: auto;
       }
     }
   </style>
@@ -260,11 +262,12 @@
     </p>
   </section>
 
-  <!-- CALENDARIO AMBIENTAL -->
+  <!-- CALENDARIO AMBIENTAL (REEMPLAZADO POR IMAGEN) -->
   <section id="calendario" class="glass">
     <h2>Calendario Ambiental</h2>
     <div class="calendar-container">
-      <iframe src="https://calendar.google.com/calendar/embed?src=c_80b4d8a8073edb1ff0a2b3d26bdb6c85f8e94a3ee1f6e5dcb3f8ab54b5d6a7b2%40group.calendar.google.com&ctz=America%2FBogota"></iframe>
+      <!-- Reemplacé el iframe por una imagen estática -->
+      <img src="calendario.jpg" alt="Calendario Ambiental" class="calendar-img">
 
       <!-- Fechas Ambientales -->
       <ul id="fechasAmbientales" class="glass">
@@ -301,6 +304,37 @@
     </script>
   </section>
 
+  <!-- NUEVA SECCIÓN DE NOTICIAS -->
+  <section id="noticias" class="glass">
+    <h2>Noticias</h2>
+
+    <div class="card-grid">
+
+      <div class="card glass">
+        <img src="proyectos\imagenes-PRAE/noticia1.jpeg" alt="Noticia 1">
+        <h3>Jóvenes de Semillas del Futuro llevan el aroma del conocimiento cafetero a su institución</h3>
+        <p>Durante los últimos dos años, un grupo de estudiantes de la Institución Educativa San José del Citará se convirtieron en protagonista de una experiencia que marcó su formación: su participación en Semillas del Futuro, programa impulsado por la Federación Nacional de Cafeteros.</p>
+
+<p>Como parte del proceso, los jóvenes viajaron a Medellín para capacitarse en catación y barismo, donde aprendieron a identificar la calidad del café, dominar diversos métodos de preparación y perfeccionar el análisis sensorial. La experiencia no solo fortaleció sus habilidades técnicas, sino que despertó en ellos un entusiasmo renovado por la cultura cafetera.</p>
+
+<p>Ahora, estos nuevos embajadores del café están listos para compartir sus conocimientos con otros estudiantes, llevando a la institución el aroma del aprendizaje y sembrando nuevas oportunidades para la comunidad educativa.</p>
+      </div>
+
+      <div class="card glass">
+        <img src="proyectos\imagenes-PRAE/noticia2.jpg" alt="Noticia 2">
+        <h3>Jornada de Reciclaje</h3>
+        <p>Se recolectaron más de 120 kg de material reciclable gracias a la participación activa de toda la comunidad educativa.</p>
+      </div>
+
+      <div class="card glass">
+        <img src="proyectos\imagenes-PRAE/noticia3.jpg" alt="Noticia 3">
+        <h3>Visita al Apiario Escolar</h3>
+        <p>Los estudiantes exploraron el mundo de las abejas y aprendieron sobre su importancia para los ecosistemas locales.</p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- (Sección Huerta y demás continúan igual que tu versión) -->
   <!-- ... resto del código idéntico ... -->
 
@@ -309,12 +343,12 @@
     <p>Promovemos la agricultura sostenible y el trabajo colaborativo, conectando a los estudiantes con la tierra y la producción limpia de alimentos saludables.</p>
     <div class="card-grid">
       <div class="card glass">
-        <img src="huerta.jpg" alt="Huerta escolar">
+        <img src="proyectos\imagenes-PRAE/huerta.jpg" alt="Huerta escolar">
         <h3>Aprender sembrando</h3>
         <p>Los estudiantes cultivan hortalizas aplicando técnicas agroecológicas que fortalecen el respeto por el medio ambiente.</p>
       </div>
       <div class="card glass">
-        <img src="siembra.jpg" alt="Jornada de siembra">
+        <img src="proyectos\imagenes-PRAE/siembra.jpg" alt="Jornada de siembra">
         <h3>Trabajo en comunidad</h3>
         <p>La huerta fomenta valores de cooperación y conciencia ambiental en cada jornada de siembra y cosecha.</p>
       </div>
@@ -326,12 +360,12 @@
     <p>Transformamos los residuos orgánicos del comedor y la huerta en abono natural, promoviendo el aprovechamiento de los desechos.</p>
     <div class="card-grid">
       <div class="card glass">
-        <img src="compostaje.jpg" alt="Compostaje">
+        <img src="proyectos\imagenes-PRAE/compostaje.jpg" alt="Compostaje">
         <h3>Abono ecológico</h3>
         <p>El compost generado se utiliza en la huerta, mejorando la fertilidad del suelo y reduciendo residuos.</p>
       </div>
       <div class="card glass">
-        <img src="compostaje2.jpg" alt="Lombricultura">
+        <img src="proyectos\imagenes-PRAE/compostaje2.jpg" alt="Lombricultura">
         <h3>Lombricultura</h3>
         <p>Usamos lombrices rojas californianas para optimizar la descomposición y crear humus rico en nutrientes.</p>
       </div>
@@ -343,12 +377,12 @@
     <p>Rescatamos el valor del café como símbolo de identidad cultural y agrícola, promoviendo su cultivo sostenible.</p>
     <div class="card-grid">
       <div class="card glass">
-        <img src="cafetal.jpg" alt="Cultivo de café">
+        <img src="proyectos\imagenes-PRAE/cafetal.jpg" alt="Cultivo de café">
         <h3>Semillas con historia</h3>
         <p>Los estudiantes conocen las etapas del cultivo del café y aplican prácticas sostenibles.</p>
       </div>
       <div class="card glass">
-        <img src="cafe.jpg" alt="Secado del café">
+        <img src="proyectos\imagenes-PRAE/cafe.jpg" alt="Secado del café">
         <h3>Valor agregado</h3>
         <p>Exploramos procesos de tostado y empaque escolar como forma de emprendimiento local.</p>
       </div>
@@ -360,12 +394,12 @@
     <p>Educamos en la clasificación y reutilización de residuos, fomentando una cultura ecológica escolar.</p>
     <div class="card-grid">
       <div class="card glass">
-        <img src="reciclaje.jpeg" alt="Clasificación de residuos">
+        <img src="proyectos\imagenes-PRAE/reciclaje.jpeg" alt="Clasificación de residuos">
         <h3>Separar para cuidar</h3>
         <p>Los estudiantes aprenden a clasificar materiales mediante actividades lúdicas y creativas.</p>
       </div>
       <div class="card glass">
-        <img src="arte-reciclado.jpg" alt="Arte con reciclaje">
+        <img src="proyectos\imagenes-PRAE/arte-reciclado.jpg" alt="Arte con reciclaje">
         <h3>Creatividad verde</h3>
         <p>Con materiales reutilizados elaboran obras y objetos útiles, mostrando que reciclar también es crear.</p>
       </div>
@@ -377,12 +411,12 @@
     <p>Elaboramos jabones ecológicos con aceites naturales y aromas del entorno, promoviendo el emprendimiento estudiantil.</p>
     <div class="card-grid">
       <div class="card glass">
-        <img src="jabones.jpg" alt="Jabones ecológicos">
+        <img src="proyectos\imagenes-PRAE/jabones.jpg" alt="Jabones ecológicos">
         <h3>Productos sostenibles</h3>
         <p>Aprendemos a fabricar jabones biodegradables que cuidan la piel y el medio ambiente.</p>
       </div>
       <div class="card glass">
-        <img src="ventas.jpg" alt="Emprendimiento escolar">
+        <img src="proyectos\imagenes-PRAE/ventas.jpg" alt="Emprendimiento escolar">
         <h3>Emprendimiento verde</h3>
         <p>Los productos elaborados se exhiben en ferias escolares, fortaleciendo la autogestión.</p>
       </div>
@@ -394,7 +428,7 @@
     <p>Exploraremos el fascinante mundo de las abejas, comprendiendo su papel vital en la polinización y la biodiversidad.</p>
     <div class="card-grid">
       <div class="card glass">
-        <img src="apicultura.jpg" alt="Colmenas">
+        <img src="proyectos\imagenes-PRAE/apicultura.jpg" alt="Colmenas">
         <h3>Guardianes de la naturaleza</h3>
         <p>Aprenderemos sobre la importancia de las abejas y los cuidados para mantener su equilibrio ecológico.</p>
       </div>
